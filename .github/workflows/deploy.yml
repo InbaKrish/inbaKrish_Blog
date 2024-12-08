@@ -32,9 +32,16 @@ jobs:
       - name: Build - Generate static files
         run: ${RUNNER_TEMP}/hugo
 
+      - name: Debug Submodule Initialization
+        run: |
+          ls -la
+          if [ -d "public" ]; then echo "Public folder exists"; else echo "Public folder missing"; fi
+          git submodule status
+
       - name: Commit and Push Changes to Submodule
         run: |
           cd public
+          echo $(pwd)
           echo $(git status)
           echo $(git remote -v)
           git config user.name "InbaKrish"
