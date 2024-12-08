@@ -1,0 +1,46 @@
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Setup Hugo
+        run: |
+          curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.139.3/hugo_extended_0.139.3_linux-amd64.tar.gz'
+          tar -C ${RUNNER_TEMP} -zxvf /tmp/hugo.tar.gz hugo
+
+      - name: Build - Generate static files
+        run: ${RUNNER_TEMP}/hugo
+
+      - name: Commit and Push Changes to Submodule
+        run: |
+          cd public
+          git config user.name "InbaKrish"
+          git config user.email "inbakrish007@gmail.com"
+          git add .
+          git commit -m "Automated deploy by GitHub Actions" || echo "No changes to commit"
+          git push origin main
