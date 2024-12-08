@@ -32,11 +32,10 @@ jobs:
       - name: Build - Generate static files
         run: ${RUNNER_TEMP}/hugo
 
-      - name: Debug Submodule Initialization
-        run: |
-          ls -la
-          if [ -d "public" ]; then echo "Public folder exists"; else echo "Public folder missing"; fi
-          git submodule status
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Commit and Push Changes to Submodule
         run: |
