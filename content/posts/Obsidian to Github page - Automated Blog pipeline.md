@@ -238,5 +238,17 @@ jobs:
 
 **Hola!**, Now we have improved the automated setup, now steps just involves the files and image sync from obsidian to Hugo project, commit all the push. From the hugo project the Github action deploys the static site to the github page configures repo using the PAT_TOKEN.
 
-
 ![Image Description](/images/Pasted%20image%2020241207210218.png)
+
+---
+## References
+
+-> Idea for Obsidian based approach,
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dnE7c0ELEH8?si=HB3g66gxTjPLyzIv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+-> Github action based approach - https://theplaybook.dev/docs/deploy-hugo-to-github-pages/
+
+#### Github References
+
+Main Hugo project - https://github.com/InbaKrish/inbaKrish_Blog
+Github page submodule - https://github.com/InbaKrish/inbakrish.github.io
