@@ -34,6 +34,8 @@ jobs:
       - name: Commit and Push Changes to Submodule
         run: |
           cd public
+          echo $(git satus)
+          echo $(git remote -v)
           git config user.name "InbaKrish"
           git config user.email "inbakrish007@gmail.com"
           git add .
