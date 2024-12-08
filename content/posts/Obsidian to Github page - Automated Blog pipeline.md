@@ -179,5 +179,64 @@ use **Deploy from a branch**, with the **main** branch. After the configuration 
 
 > NOTE - If you want custom domain configuration, refer to the [official docs](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site) and it can be configured such.
 
+### Automate deployment using - Github Action
+
+Now instead of manually building the static files and pushing manually to the repository, trigger a github action for the main repository, which generates the static files and pushes it to the github page repo.
+
+1. Create personal access token, as we need to access another repo create access token with repo and workflow scopes.![Image Description](/images/Pasted%20image%2020241208112436.png)
+2. Create `production` environment and add the PAT_TOKEN secret ![Image Description](/images/Pasted%20image%2020241208112652.png)
+3. Provide read & write access for the github actions settings in the deploy repo. ![Image Description](/images/Pasted%20image%2020241208113243.png)
+
+After the PAT_TOKEN and action permissions setup, use the following Github-action deployment workflow.
+```yml
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["master"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest 
+    environment: production
+    steps:
+      - name: Checkout Source Repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build Hugo Site
+        run: hugo
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.PAT_TOKEN }}
+          external_repository: InbaKrish/inbakrish.github.io
+          publish_branch: main
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+```
+
+**Hola!**, Now we have improved the automated setup, now steps just involves the files and image sync from obsidian to Hugo project, commit all the push. From the hugo project the Github action deploys the static site to the github page configures repo using the PAT_TOKEN.
+
 
 ![Image Description](/images/Pasted%20image%2020241207210218.png)
