@@ -4,7 +4,7 @@ import shutil
 
 # Paths for source (Obsidian Vault) and destination (Hugo Project)
 POSTS_DIR = "/home/rently/self/inbaKrish_Blog/content/posts/"
-ATTACHMENTS_DIR = "/home/rently/self_obsidian_vaults/learnings_v2/"
+ATTACHMENTS_DIR = "/home/rently/obsidian_vaults/Learnings_zettlekasten"
 STATIC_FILES_DIR = "/home/rently/self/inbaKrish_Blog/static/images/"
 
 # Regex to match any attachment (image, pdf, etc.)
