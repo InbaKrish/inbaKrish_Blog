@@ -1,3 +1,11 @@
+---
+title: Is AI Replacing Software Engineers? A Mid-Level Developer’s Perspective
+tags:
+  - AI
+date: 2025-01-20
+draft: "false"
+---
+
 The tech world is abuzz with statements from industry leaders like Mark Zuckerberg, the CEO of Salesforce, and others suggesting AI will soon replace mid-level software engineers. But how much of this is hype, and how much is reality? Let’s break this down logically and focus on what’s actionable today.
 
 ## The Bold Claims
