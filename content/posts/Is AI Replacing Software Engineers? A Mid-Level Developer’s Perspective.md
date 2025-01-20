@@ -30,6 +30,7 @@ But let’s pause and ask: how often have predictions about technology unfolded 
 Tech leaders are visionary, but that doesn’t make them infallible. Recall the bold claims about the metaverse a few years ago:
 
 _"Starting today, our company is now Meta. We’re bringing the metaverse to life."_
+![Image Description](/images/Pasted%20image%2020250120205752.png)
 
 Yet here we are, not living entirely in VR headsets. Predictions are just that – forecasts based on current trends, not crystal balls.
 
@@ -97,7 +98,7 @@ While individual companies might need fewer engineers, the industry’s scope is
 - **AI Engineers** are in demand to build and maintain these systems.
     
 
-**Example:** Even OpenAI, the creators of ChatGPT, are hiring engineers with salaries as high as $400k. Clearly, there’s no AI apocalypse for developers.
+**Example:** Even OpenAI, the creators of ChatGPT, are [hiring engineers](https://openai.com/careers/software-engineer-frontend/) with salaries as high as $400k. Clearly, there’s no AI apocalypse for developers.
 
 ---
 
