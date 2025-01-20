@@ -142,3 +142,7 @@ Nobody can predict the future with certainty. The tech industry thrives on evolu
 The future belongs to those who evolve with it.
 
 ![Image Description](/images/Pasted%20image%2020250120204149.png)
+
+**TBF** - I used ChatGPT Canvas to curate my ideas (and my thoughts) into this blog.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aPwJNJvoLMM?si=K_QdJkqpYvsGYX5d" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
